@@ -1,8 +1,8 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int [] array1 = new int [] {1,3,2};
+        int [] array1 = new int [] {1,3,2,4};
         int [] array2 = new int [] {1,3,-4,5};
-        System.out.println(isSorted(array1));
+        System.out.println(findMissingInt(array1));
     }
     // gets an array of integers and returns its maximum value
     public static int Max (int [] array) {
@@ -25,13 +25,17 @@ public class ArrayOps {
 
     public static int findMissingInt (int [] array) {
         int num = 1;
+        int count = 1;
         for ( int i = 0; i < array.length; i ++){
             if (num == array[i]) {
                 num ++;
+                count ++;
                 i=0;
             }
         }
+        if (count == array.length-1)
         return num;
+        else return 0;
     }
 
 
