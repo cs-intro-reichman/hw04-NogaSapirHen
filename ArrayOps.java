@@ -1,6 +1,6 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int [] array1 = new int [] {1,3,2,4};
+        int [] array1 = new int [] {0};
         int [] array2 = new int [] {1,3,-4,5};
         System.out.println(findMissingInt(array1));
     }
@@ -25,17 +25,12 @@ public class ArrayOps {
 
     public static int findMissingInt (int [] array) {
         int num = 1;
-        int count = 1;
         for ( int i = 0; i < array.length; i ++){
-            if (num == array[i]) {
-                num ++;
-                count ++;
-                i=0;
+            if (!contains (array, num) )
+            return num;
+            else num ++;
             }
-        }
-        if (count == array.length-1)
-        return num;
-        else return 0;
+        return 0;
     }
 
 
